@@ -473,20 +473,29 @@
 }
 
 /* Hero Animation Container - Laravel matching */
-.heroAnimationImg,
+.heroAnimationImg {
+  margin-block-end: -32rem;
+}
+
 :global(.hero-animation-img) {
   margin-block-end: -32rem;
 }
 
 @media (max-width: 1200px) {
-  .heroAnimationImg,
+  .heroAnimationImg {
+    margin-block-end: -20rem;
+  }
+
   :global(.hero-animation-img) {
     margin-block-end: -20rem;
   }
 }
 
 @media (max-width: 576px) {
-  .heroAnimationImg,
+  .heroAnimationImg {
+    margin-block-end: -10rem;
+  }
+
   :global(.hero-animation-img) {
     margin-block-end: -10rem;
   }
