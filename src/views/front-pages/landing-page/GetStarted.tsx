@@ -42,10 +42,10 @@ const GetStarted = ({ mode }: { mode: SystemMode }) => {
               Ready to Elevate Your Brand?
             </Typography>
             <Typography variant='h5' className={classnames('text-body', styles.ctaDescription)}>
-              We craft digital solutions that drive results. Let's bring your vision to life.
+              We craft digital solutions that drive results. Let&apos;s bring your vision to life.
             </Typography>
             <Button component={Link} href='#ContactUs' variant='contained' size='large' className={styles.ctaButton}>
-              Let's Get Started
+              Let&apos;s Get Started
             </Button>
           </Grid>
           <Grid size={{ xs: 12, lg: 6 }} className={classnames(styles.ctaVisualGrid, styles.ctaVisualWrapper)}>

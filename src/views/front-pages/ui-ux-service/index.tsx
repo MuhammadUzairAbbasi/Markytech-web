@@ -53,8 +53,9 @@ const UiUxServicePageWrapper = ({ mode }: { mode: SystemMode }) => {
             <br />
             From <strong>brand identity and marketing visuals</strong> to{' '}
             <strong>product interfaces and design systems</strong>, we ensure every detail reflects clarity,
-            consistency, and purpose. Whether you're building a new product or refreshing your brand, MarkyTech delivers{' '}
-            <strong>beautiful, functional, and impactful designs</strong> that inspire connection and drive results.
+            consistency, and purpose. Whether you&apos;re building a new product or refreshing your brand, MarkyTech
+            delivers <strong>beautiful, functional, and impactful designs</strong> that inspire connection and drive
+            results.
           </>
         }
       />

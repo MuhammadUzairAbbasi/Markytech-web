@@ -1,5 +1,6 @@
 'use client'
-import React, { useRef, useEffect, useCallback, useMemo } from 'react'
+import type React from 'react'
+import { useRef, useEffect, useCallback, useMemo } from 'react'
 import { gsap } from 'gsap'
 import { InertiaPlugin } from 'gsap/InertiaPlugin'
 
@@ -147,6 +148,7 @@ const DotGrid: React.FC<DotGridProps> = ({
     if (!circlePath) return
 
     let rafId: number
+
     const proxSq = proximity * proximity
 
     const draw = () => {
@@ -196,6 +198,7 @@ const DotGrid: React.FC<DotGridProps> = ({
 
   useEffect(() => {
     buildGrid()
+
     let ro: ResizeObserver | null = null
 
     if ('ResizeObserver' in window) {
@@ -206,8 +209,11 @@ const DotGrid: React.FC<DotGridProps> = ({
     }
 
     return () => {
-      if (ro) ro.disconnect()
-      else window.removeEventListener('resize', buildGrid)
+      if (ro) {
+        ro.disconnect()
+      } else {
+        window.removeEventListener('resize', buildGrid)
+      }
     }
   }, [buildGrid])
 
@@ -218,6 +224,7 @@ const DotGrid: React.FC<DotGridProps> = ({
       const dt = pr.lastTime ? now - pr.lastTime : 16
       const dx = e.clientX - pr.lastX
       const dy = e.clientY - pr.lastY
+
       let vx = (dx / dt) * 1000
       let vy = (dy / dt) * 1000
       let speed = Math.hypot(vx, vy)
@@ -269,6 +276,7 @@ const DotGrid: React.FC<DotGridProps> = ({
 
     const onClick = (e: MouseEvent) => {
       const rect = canvasRef.current!.getBoundingClientRect()
+
       const cx = e.clientX - rect.left
       const cy = e.clientY - rect.top
 

@@ -52,7 +52,7 @@ const MobileAppServicePageWrapper = ({ mode }: { mode: SystemMode }) => {
             <br />
             <br />
             From concept to launch, we deliver <strong>end-to-end mobile app development services</strong>—including
-            UX/UI design, backend integration, API development, and performance optimization. Whether it's an iOS,
+            UX/UI design, backend integration, API development, and performance optimization. Whether it&apos;s an iOS,
             Android, or hybrid app, our goal is to craft{' '}
             <strong>intuitive, scalable, and impactful mobile solutions</strong> that drive engagement and elevate your
             digital presence.

@@ -53,8 +53,8 @@ const DigitalMarketingServicePageWrapper = ({ mode }: { mode: SystemMode }) => {
             <br />
             From <strong>content strategy and creative design</strong> to{' '}
             <strong>paid campaigns, analytics, and brand storytelling</strong>, we craft social experiences that
-            resonate with your audience. We don't just post — we create meaningful interactions that elevate your brand
-            and turn followers into loyal advocates.
+            resonate with your audience. We don&apos;t just post — we create meaningful interactions that elevate your
+            brand and turn followers into loyal advocates.
           </>
         }
       />

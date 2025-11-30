@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from 'react'
+import type React from 'react'
+import { useRef, useEffect } from 'react'
 import './Squares.css'
 
 type CanvasStrokeStyle = string | CanvasGradient | CanvasPattern
@@ -32,7 +33,9 @@ const Squares: React.FC<SquaresProps> = ({
 
   useEffect(() => {
     const canvas = canvasRef.current
+
     if (!canvas) return
+
     const ctx = canvas.getContext('2d')
 
     const resizeCanvas = () => {
@@ -47,6 +50,7 @@ const Squares: React.FC<SquaresProps> = ({
 
     const drawGrid = () => {
       if (!ctx) return
+
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       const startX = Math.floor(gridOffset.current.x / squareSize) * squareSize
@@ -79,6 +83,7 @@ const Squares: React.FC<SquaresProps> = ({
         canvas.height / 2,
         Math.sqrt(canvas.width ** 2 + canvas.height ** 2) / 1.5
       )
+
       gradient.addColorStop(0, 'rgba(0, 0, 0, 0)')
       gradient.addColorStop(1, '#060010')
 
@@ -88,6 +93,7 @@ const Squares: React.FC<SquaresProps> = ({
 
     const updateAnimation = () => {
       const effectiveSpeed = Math.max(speed, 0.1)
+
       switch (direction) {
         case 'right':
           gridOffset.current.x = (gridOffset.current.x - effectiveSpeed + squareSize) % squareSize
@@ -110,6 +116,7 @@ const Squares: React.FC<SquaresProps> = ({
       }
 
       drawGrid()
+
       requestRef.current = requestAnimationFrame(updateAnimation)
     }
 
@@ -143,6 +150,7 @@ const Squares: React.FC<SquaresProps> = ({
 
     return () => {
       window.removeEventListener('resize', resizeCanvas)
+
       if (requestRef.current) cancelAnimationFrame(requestRef.current)
       canvas.removeEventListener('mousemove', handleMouseMove)
       canvas.removeEventListener('mouseleave', handleMouseLeave)

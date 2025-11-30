@@ -1,4 +1,5 @@
-import React, { useCallback, useEffect, useRef } from 'react'
+import type React from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import './Cubes.css'
 
@@ -172,12 +173,14 @@ const Cubes: React.FC<CubesProps> = ({
 
   const onTouchEnd = useCallback(() => {
     if (!sceneRef.current) return
+
     resetAll()
   }, [resetAll])
 
   const onClick = useCallback(
     (e: MouseEvent | TouchEvent) => {
       if (!rippleOnClick || !sceneRef.current) return
+
       const rect = sceneRef.current.getBoundingClientRect()
       const cellW = rect.width / gridCols
       const cellH = rect.height / gridRows
@@ -277,6 +280,7 @@ const Cubes: React.FC<CubesProps> = ({
     const el = sceneRef.current
 
     if (!el) return
+
     el.addEventListener('pointermove', onPointerMove)
     el.addEventListener('pointerleave', resetAll)
     el.addEventListener('click', onClick)
@@ -294,8 +298,8 @@ const Cubes: React.FC<CubesProps> = ({
       el.removeEventListener('touchstart', onTouchStart)
       el.removeEventListener('touchend', onTouchEnd)
 
-      rafRef.current != null && cancelAnimationFrame(rafRef.current)
-      idleTimerRef.current && clearTimeout(idleTimerRef.current)
+      if (rafRef.current != null) cancelAnimationFrame(rafRef.current)
+      if (idleTimerRef.current) clearTimeout(idleTimerRef.current)
     }
   }, [onPointerMove, resetAll, onClick, onTouchMove, onTouchStart, onTouchEnd])
 

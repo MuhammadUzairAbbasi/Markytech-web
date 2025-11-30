@@ -17,7 +17,8 @@ import classnames from 'classnames'
 import { useKeenSlider } from 'keen-slider/react'
 
 // Data Imports
-import { getProjectsByService, type ServiceType, type TechStackName } from '../data/projects'
+import { getProjectsByService } from '../data/projects'
+import type { ServiceType, TechStackName } from '../data/projects'
 
 // Component Imports
 import {
@@ -102,6 +103,7 @@ const ServiceProjectsSection = ({
       ...project,
       techStack: project.techStack.map(tech => {
         const IconComponent = techStackIconMap[tech.name]
+
         return {
           name: tech.name,
           svg: IconComponent ? <IconComponent /> : null
@@ -112,6 +114,7 @@ const ServiceProjectsSection = ({
 
   // Default values based on service type
   const defaultSectionId = sectionId || `${filterByService}-projects`
+
   const defaultTitle =
     title ||
     `Our ${
@@ -125,6 +128,7 @@ const ServiceProjectsSection = ({
               ? 'Digital Marketing'
               : 'Agentic AI'
     } Projects`
+
   const defaultBadgeLabel =
     badgeLabel ||
     `${
@@ -138,6 +142,7 @@ const ServiceProjectsSection = ({
               ? 'Digital Marketing'
               : 'Agentic AI'
     } Projects`
+
   const defaultDescription =
     description ||
     `Explore our portfolio of successful ${
@@ -200,6 +205,7 @@ const ServiceProjectsSection = ({
 
         // Pause on hover
         const sliderElement = slider.container
+
         sliderElement.addEventListener('mouseenter', () => {
           mouseOver = true
           clearNextTimeout()
@@ -229,14 +235,18 @@ const ServiceProjectsSection = ({
 
       const handlePortfolioMouseMove = (e: Event) => {
         const mouseEvent = e as MouseEvent
+
         // Apply translateZ to overlay elements
         animationElements.forEach((layer, index) => {
           const zDepth = zDepths[index] || zDepths[zDepths.length - 1]
+
           ;(layer as HTMLElement).style.transform = `translateZ(${zDepth}rem)`
         })
+
         // Apply 3D transform to container
         const x = (window.innerWidth - mouseEvent.pageX * 2) / 180
         const y = (window.innerHeight - mouseEvent.pageY * 2) / 180
+
         animationImg.forEach(layer => {
           ;(layer as HTMLElement).style.transform =
             `perspective(1200px) rotateX(${y}deg) rotateY(${x}deg) scale3d(1, 1, 1)`
@@ -245,13 +255,16 @@ const ServiceProjectsSection = ({
 
       const handleNavMouseMove = (e: Event) => {
         const mouseEvent = e as MouseEvent
+
         // Different z-depth for navbar hover
         animationElements.forEach((layer, index) => {
           const zDepth = `${(index + 1) * 0.5}rem`
+
           ;(layer as HTMLElement).style.transform = `translateZ(${zDepth})`
         })
         const x = (window.innerWidth - mouseEvent.pageX * 2) / 100
         const y = (window.innerHeight - mouseEvent.pageY * 2) / 100
+
         animationImg.forEach(layer => {
           ;(layer as HTMLElement).style.transform =
             `perspective(1200px) rotateX(${y}deg) rotateY(${x}deg) scale3d(1, 1, 1)`
@@ -281,6 +294,7 @@ const ServiceProjectsSection = ({
           portfolioSection.removeEventListener('mousemove', handlePortfolioMouseMove)
           portfolioSection.removeEventListener('mouseout', handleMouseOut)
         }
+
         if (nav) {
           nav.removeEventListener('mousemove', handleNavMouseMove)
         }

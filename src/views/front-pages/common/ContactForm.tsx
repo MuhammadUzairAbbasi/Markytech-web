@@ -45,12 +45,15 @@ const ContactForm = () => {
     service: '',
     message: ''
   })
+
   const [recaptchaCompleted, setRecaptchaCompleted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+
   const [submitStatus, setSubmitStatus] = useState<{
     type: 'success' | 'error' | null
     message: string
   }>({ type: null, message: '' })
+
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
 
   // Initialize reCAPTCHA callbacks
@@ -58,8 +61,10 @@ const ContactForm = () => {
     if (typeof window !== 'undefined') {
       window.onRecaptchaSuccess = () => {
         setRecaptchaCompleted(true)
+
         if (window.grecaptcha && recaptchaWidgetId.current !== null) {
           const token = window.grecaptcha.getResponse(recaptchaWidgetId.current)
+
           setRecaptchaToken(token)
         }
       }
@@ -106,13 +111,16 @@ const ContactForm = () => {
     } else {
       // Load the script
       const script = document.createElement('script')
+
       script.src = 'https://www.google.com/recaptcha/api.js'
       script.async = true
       script.defer = true
+
       script.onload = () => {
         // Wait for grecaptcha to be ready
         initRecaptcha()
       }
+
       script.onerror = () => {
         console.error('Failed to load reCAPTCHA script')
         setSubmitStatus({
@@ -120,6 +128,7 @@ const ContactForm = () => {
           message: 'Failed to load reCAPTCHA. Please refresh the page.'
         })
       }
+
       document.body.appendChild(script)
     }
 
@@ -138,6 +147,7 @@ const ContactForm = () => {
   // Handle form input change
   const handleChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
+
     if (submitStatus.type) {
       setSubmitStatus({ type: null, message: '' })
     }
@@ -152,6 +162,7 @@ const ContactForm = () => {
         type: 'error',
         message: 'Please complete the reCAPTCHA verification before submitting.'
       })
+
       return
     }
 
@@ -182,6 +193,7 @@ const ContactForm = () => {
       })
 
       // Reset form
+
       setFormData({
         firstName: '',
         lastName: '',
@@ -193,6 +205,7 @@ const ContactForm = () => {
       setRecaptchaToken(null)
 
       // Reset reCAPTCHA
+
       if (window.grecaptcha && recaptchaWidgetId.current !== null) {
         try {
           window.grecaptcha.reset(recaptchaWidgetId.current)

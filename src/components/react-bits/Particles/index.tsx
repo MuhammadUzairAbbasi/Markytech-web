@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react'
+import type React from 'react'
+import { useEffect, useRef } from 'react'
 import { Renderer, Camera, Geometry, Program, Mesh } from 'ogl'
 
 import './Particles.css'
@@ -205,6 +206,7 @@ const Particles: React.FC<ParticlesProps> = ({
     const particles = new Mesh(gl, { mode: gl.POINTS, geometry, program })
 
     let animationFrameId: number
+
     let lastTime = performance.now()
     let elapsed = 0
 

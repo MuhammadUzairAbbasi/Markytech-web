@@ -24,6 +24,7 @@ const ContactUsSectionWrapper = ({ children }: ContactUsSectionWrapperProps) => 
   useEffect(() => {
     // Find the section element with id='ContactUs'
     const sectionElement = document.getElementById('ContactUs')
+
     if (!sectionElement) return
 
     ref.current = sectionElement
@@ -32,6 +33,7 @@ const ContactUsSectionWrapper = ({ children }: ContactUsSectionWrapperProps) => 
       ([entry]) => {
         if (skipIntersection.current) {
           skipIntersection.current = false
+
           return
         }
 

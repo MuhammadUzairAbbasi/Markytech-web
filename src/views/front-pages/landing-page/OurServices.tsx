@@ -124,17 +124,21 @@ const OurServices = () => {
       return new Promise<void>(resolve => {
         if (window.THREE) {
           resolve()
-          return
+          
+return
         }
 
         const threeScript = document.createElement('script')
+
         threeScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'
         threeScript.async = true
         threeScript.onload = () => resolve()
+
         threeScript.onerror = () => {
           console.error('Failed to load Three.js')
           resolve() // Continue even if it fails
         }
+
         document.head.appendChild(threeScript)
       })
     }
@@ -144,17 +148,21 @@ const OurServices = () => {
       return new Promise<void>(resolve => {
         if (window.VANTA) {
           resolve()
-          return
+          
+return
         }
 
         const vantaScript = document.createElement('script')
+
         vantaScript.src = 'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js'
         vantaScript.async = true
         vantaScript.onload = () => resolve()
+
         vantaScript.onerror = () => {
           console.error('Failed to load VANTA')
           resolve()
         }
+
         document.body.appendChild(vantaScript)
       })
     }

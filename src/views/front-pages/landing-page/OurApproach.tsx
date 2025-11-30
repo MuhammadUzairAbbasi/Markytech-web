@@ -133,6 +133,7 @@ const OurApproach = () => {
     return () => {
       ScrollTrigger.getAll().forEach(trigger => {
         const triggerElement = trigger.vars.trigger as HTMLElement
+
         if (allRevealElements.includes(triggerElement)) {
           trigger.kill()
         }

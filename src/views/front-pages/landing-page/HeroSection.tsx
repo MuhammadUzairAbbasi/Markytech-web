@@ -38,6 +38,7 @@ const HeroSection = ({ mode }: { mode: SystemMode }) => {
     '/images/markytech/dashboard/markytech-hero-2.webp', // Overlay 1
     '/images/markytech/dashboard/markytech-hero-3.webp' // Overlay 2
   ]
+
   const heroSectionBgLight = '/images/front-pages/landing-page/hero-bg-light.png'
   const heroSectionBgDark = '/images/front-pages/landing-page/hero-bg-dark.png'
   const heroThemeImageLight = '/images/markytech/dashboard/markytech-hero-light-2.webp'
@@ -59,12 +60,14 @@ const HeroSection = ({ mode }: { mode: SystemMode }) => {
 
       if (!existingScript) {
         const script = document.createElement('script')
+
         script.src = 'https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js'
         script.type = 'module'
         document.body.appendChild(script)
 
         return () => {
           const scriptToRemove = document.querySelector('script[src*="dotlottie-wc"]')
+
           if (scriptToRemove) {
             document.body.removeChild(scriptToRemove)
           }
@@ -85,14 +88,19 @@ const HeroSection = ({ mode }: { mode: SystemMode }) => {
 
       const handleHeroMouseMove = (e: Event) => {
         const mouseEvent = e as MouseEvent
+
+
         // Apply translateZ to overlay elements
         animationElements.forEach((layer, index) => {
           const zDepth = zDepths[index] || zDepths[zDepths.length - 1]
+
           ;(layer as HTMLElement).style.transform = `translateZ(${zDepth}rem)`
         })
+
         // Apply 3D transform to container
         const x = (window.innerWidth - mouseEvent.pageX * 2) / 100
         const y = (window.innerHeight - mouseEvent.pageY * 2) / 100
+
         animationImg.forEach(layer => {
           ;(layer as HTMLElement).style.transform =
             `perspective(1200px) rotateX(${y}deg) rotateY(${x}deg) scale3d(1, 1, 1)`
@@ -101,13 +109,17 @@ const HeroSection = ({ mode }: { mode: SystemMode }) => {
 
       const handleNavMouseMove = (e: Event) => {
         const mouseEvent = e as MouseEvent
+
+
         // Different z-depth for navbar hover
         animationElements.forEach((layer, index) => {
           const zDepth = `${(index + 1) * 0.5}rem`
+
           ;(layer as HTMLElement).style.transform = `translateZ(${zDepth})`
         })
         const x = (window.innerWidth - mouseEvent.pageX * 2) / 100
         const y = (window.innerHeight - mouseEvent.pageY * 2) / 100
+
         animationImg.forEach(layer => {
           ;(layer as HTMLElement).style.transform =
             `perspective(1200px) rotateX(${y}deg) rotateY(${x}deg) scale3d(1, 1, 1)`
@@ -137,6 +149,7 @@ const HeroSection = ({ mode }: { mode: SystemMode }) => {
           heroSection.removeEventListener('mousemove', handleHeroMouseMove)
           heroSection.removeEventListener('mouseout', handleMouseOut)
         }
+
         if (nav) {
           nav.removeEventListener('mousemove', handleNavMouseMove)
         }

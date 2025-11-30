@@ -190,6 +190,7 @@ const OurClient = () => {
 
         // Pause on hover
         const sliderElement = slider.container
+
         sliderElement.addEventListener('mouseenter', () => {
           mouseOver = true
           clearNextTimeout()
@@ -221,7 +222,7 @@ const OurClient = () => {
           </span>
         </Typography>
         <Typography className='text-center mb-12'>
-          We're proud to have partnered with these amazing companies and individuals.
+          We&apos;re proud to have partnered with these amazing companies and individuals.
         </Typography>
       </div>
       <div className={classnames(styles.swiperClientsLogosCarousel, 'overflow-hidden')}>

@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
+import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 
 // Verify reCAPTCHA token
@@ -7,6 +8,7 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
 
   if (!secretKey) {
     console.error('RECAPTCHA_SECRET_KEY is not set')
+
     return false
   }
 
@@ -20,9 +22,11 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
     })
 
     const data = await response.json()
+
     return data.success === true
   } catch (error) {
     console.error('reCAPTCHA verification error:', error)
+
     return false
   }
 }
@@ -111,6 +115,7 @@ async function sendEmail(formData: {
 
   // Send email
   const info = await transporter.sendMail(mailOptions)
+
   return info
 }
 
@@ -126,6 +131,7 @@ export async function POST(request: NextRequest) {
 
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
     if (!emailRegex.test(email)) {
       return NextResponse.json({ error: 'Invalid email format' }, { status: 400 })
     }
@@ -136,6 +142,7 @@ export async function POST(request: NextRequest) {
     }
 
     const isRecaptchaValid = await verifyRecaptcha(recaptchaToken)
+
     if (!isRecaptchaValid) {
       return NextResponse.json({ error: 'reCAPTCHA verification failed. Please try again.' }, { status: 400 })
     }
@@ -152,6 +159,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 })
   } catch (error: any) {
     console.error('Contact form error:', error)
+
     return NextResponse.json({ error: 'Failed to send email. Please try again later.' }, { status: 500 })
   }
 }

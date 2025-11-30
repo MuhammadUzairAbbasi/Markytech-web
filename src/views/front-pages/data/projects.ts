@@ -277,10 +277,12 @@ export const getProjectsByService = (serviceType: ServiceType): Project[] => {
 // Helper function to get all unique service types
 export const getAllServiceTypes = (): ServiceType[] => {
   const serviceTypes = new Set<ServiceType>()
+
   projects.forEach(project => {
     project.services.forEach(service => serviceTypes.add(service))
   })
-  return Array.from(serviceTypes)
+  
+return Array.from(serviceTypes)
 }
 
 // Export default projects array

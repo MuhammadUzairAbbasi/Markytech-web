@@ -1,5 +1,5 @@
 // React Imports
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import Link from 'next/link'
 
 // MUI Imports
