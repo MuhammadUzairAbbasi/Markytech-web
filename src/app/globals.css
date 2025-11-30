@@ -131,3 +131,20 @@ code {
   background-color: rgb(var(--mui-palette-info-mainChannel) / 0.08);
   border: 0;
 }
+
+/* Hero Animation Container - Laravel matching */
+.hero-animation-img {
+  margin-block-end: -32rem;
+}
+
+@media (max-width: 1200px) {
+  .hero-animation-img {
+    margin-block-end: -20rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-animation-img {
+    margin-block-end: -10rem;
+  }
+}
