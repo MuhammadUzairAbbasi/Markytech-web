@@ -1,0 +1,941 @@
+.heroSectionBg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  inline-size: 100%;
+  inset-block-start: -12%;
+  pointer-events: none;
+  z-index: 0;
+  border-end-start-radius: 3.5rem;
+  border-end-end-radius: 3.5rem;
+  &.bgLight {
+    background: linear-gradient(138.18deg, #eae8fd 0%, #b6e3d4 94.44%);
+  }
+  &.bgDark {
+    background: var(--mui-palette-background-default);
+  }
+}
+
+.heroSecDashboard {
+  inline-size: 100%;
+}
+
+.heroSectionElements {
+  inset-block-start: 0%;
+  inset-inline-end: 0%;
+  img {
+    inline-size: 100%;
+  }
+}
+
+.heroText {
+  background: linear-gradient(135deg, #028996 0%, #016875 47.92%, #59b9d7 100%) repeat;
+  background-size: 200% 200%;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  animation: shine 2s ease-in-out infinite alternate;
+}
+
+/* Hero Title Styles - Matching PHP version */
+.heroTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.heroTitleFuturistic {
+  color: #52bccd;
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.heroTitleSolutions {
+  color: #6c757d;
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+/* Dark theme support */
+[data-mui-color-scheme='dark'] .heroTitleFuturistic {
+  color: #52bccd;
+}
+
+[data-mui-color-scheme='dark'] .heroTitleSolutions {
+  color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .heroTitleFuturistic,
+  .heroTitleSolutions {
+    font-size: 2.5rem;
+  }
+}
+
+.heroSubTitle {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.heroButtonContainer {
+  display: inline-block;
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+.heroButtonItem {
+  position: absolute;
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  left: -50%;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .heroButtonItem {
+    display: flex;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.teamCard {
+  border-start-start-radius: 90px;
+  border-start-end-radius: 20px;
+}
+
+.contactRadius {
+  border-start-start-radius: 3.75rem;
+  border-start-end-radius: var(--mui-shape-borderRadius);
+  border-end-end-radius: var(--mui-shape-borderRadius);
+  border-end-start-radius: var(--mui-shape-borderRadius);
+}
+
+.sectionStartRadius {
+  border-start-start-radius: 3.75rem;
+  border-start-end-radius: 3.75rem;
+}
+
+/* Services Section Styles */
+.icon64 {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.featureTile {
+  border: 0.5px solid var(--mui-palette-divider);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.featureTile:hover {
+  border-color: var(--mui-palette-primary-main);
+  box-shadow: 0 8px 24px rgba(var(--mui-palette-primary-mainChannel) / 0.15);
+  transform: translateY(-4px);
+}
+
+.bigOfferCard {
+  min-height: 350px;
+  border: 0;
+  transition: all 0.3s ease;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  height: 100%;
+}
+
+.bigOfferCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(var(--mui-palette-primary-mainChannel) / 0.15);
+}
+
+.sectionTitleImg {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  object-fit: contain;
+}
+
+.agenticCard {
+  position: relative;
+}
+
+.agenticCardBody {
+  position: relative;
+  z-index: 10;
+}
+
+/* Features Section Styles (Our Approach) - Matching theme-markytech.css */
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.featuresItem {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+  min-height: 250px;
+  padding: 3rem 0;
+  border-top: 1px solid rgba(var(--mui-palette-primary-mainChannel) / 0.1);
+}
+
+.featuresItem:first-child {
+  border-top: none;
+}
+
+.featuresItemLeft {
+  flex-direction: row;
+  justify-content: center;
+}
+
+.featuresItemRight {
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.featuresImage {
+  flex: 0 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+}
+
+.featuresCard {
+  border-radius: 50%;
+  overflow: visible;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  margin: 0;
+}
+
+/* Circle icons in features section - MarkyTech theme */
+.circleIcon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--mui-palette-primary-main);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(var(--mui-palette-primary-mainChannel) / 0.25);
+  transition: all 0.5s ease;
+}
+
+.circleIcon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 24px rgba(var(--mui-palette-primary-mainChannel) / 0.35);
+}
+
+.circleIcon i {
+  font-size: 54px;
+}
+
+.featuresContent {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  width: 50%;
+}
+
+.featuresItemLeft .featuresContent {
+  text-align: left;
+  padding-left: 0;
+}
+
+.featuresItemRight .featuresContent {
+  text-align: left;
+  padding-right: 0;
+}
+
+.featuresTitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-block-end: 1rem;
+  color: var(--mui-palette-text-primary);
+  line-height: 1.3;
+  position: relative;
+  z-index: 1;
+}
+
+/* Position project numbers behind h2 headings in approach section */
+.featuresContent .projectNumber {
+  position: absolute;
+  top: -4rem;
+  left: -1rem;
+  font-size: 7rem;
+  font-weight: 900;
+  color: rgba(var(--mui-palette-primary-mainChannel) / 0.1);
+  line-height: 1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.featuresDescription {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--mui-palette-text-secondary);
+  margin-bottom: 0;
+}
+
+/* GSAP animation reveal styles */
+.gs_reveal {
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
+}
+
+/* Responsive adjustments for features section */
+@media (max-width: 991.98px) {
+  .featuresItem {
+    min-height: 300px;
+    padding: 1.5rem 0;
+    gap: 1.5rem;
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .featuresImage {
+    width: 120px;
+  }
+
+  .featuresCard {
+    width: 120px;
+    height: 120px;
+  }
+
+  .circleIcon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .circleIcon i {
+    font-size: 44px;
+  }
+
+  .featuresTitle {
+    font-size: 1.5rem;
+  }
+
+  .featuresDescription {
+    font-size: 0.95rem;
+  }
+
+  .featuresItemLeft .featuresContent,
+  .featuresItemRight .featuresContent {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center !important;
+  }
+
+  .featuresContent .projectNumber {
+    top: -2rem;
+    left: -14rem;
+    font-size: 5rem;
+  }
+
+  .featuresDescription {
+    width: 100%;
+  }
+}
+
+/* Portfolio Section Styles */
+.swiperProjectsCarousel {
+  overflow: hidden;
+}
+
+.swiperProjects {
+  width: 100%;
+  height: 100%;
+}
+
+.projectShowcaseCard {
+  background: transparent;
+  border: none;
+  max-width: 900px;
+  height: 100%;
+  min-height: 400px;
+  margin: 0 auto;
+}
+
+/* Project Row Container - Flexbox replacement for Bootstrap row */
+.projectRow {
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+  min-height: 400px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Project Image Column - Flexbox replacement for Bootstrap col-md-6 */
+.projectImageColumn {
+  width: 50%;
+  height: 100%;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+/* Project Content Column - Flexbox replacement for Bootstrap col-md-6 */
+.projectContentColumn {
+  width: 50%;
+  height: 100%;
+  flex-shrink: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.projectImageContainer {
+  position: relative;
+  border-radius: 12px;
+  height: 100%;
+  width: 100%;
+  min-height: 450px;
+  overflow: hidden; /* Add this to contain the image */
+}
+
+.projectImageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+  position: absolute; /* Change from relative to absolute */
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+}
+
+.heroAnimationImg {
+  width: 100%;
+  height: 100%;
+  position: relative; /* Ensure this is relative for absolute children */
+}
+
+.animationImg {
+  transition: transform 0.3s ease;
+  width: 100% !important; /* Force full width */
+  height: 100% !important; /* Force full height */
+  object-fit: cover !important; /* Ensure cover is applied */
+}
+.heroElementsImg {
+  pointer-events: none;
+  transition:
+    transform 0.1s,
+    filter 0.1s;
+  will-change: transform, filter;
+}
+
+/* Hero Animation Container - Laravel matching */
+.heroAnimationImg,
+:global(.hero-animation-img) {
+  margin-block-end: -32rem;
+}
+
+@media (max-width: 1200px) {
+  .heroAnimationImg,
+  :global(.hero-animation-img) {
+    margin-block-end: -20rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .heroAnimationImg,
+  :global(.hero-animation-img) {
+    margin-block-end: -10rem;
+  }
+}
+
+/* Hero Dashboard Container - Laravel matching */
+:global(.hero-dashboard-img) {
+  z-index: 500;
+  inline-size: 80%;
+  margin-block: 0;
+  margin-inline: auto;
+  transform-style: preserve-3d;
+  transition: all 0.1s;
+  will-change: transform;
+  position: relative;
+  display: block;
+}
+
+:global(.hero-dashboard-img img) {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+:global(.hero-dashboard-img .hero-elements-img) {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Wave Animation - Laravel matching */
+:global(#waveAnimation) {
+  position: absolute;
+  z-index: 2;
+  block-size: 100%;
+  inline-size: 100vw;
+  inset-block-start: 35%;
+  inset-inline-start: 0;
+  pointer-events: none;
+}
+
+.projectContentContainer {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: transparent;
+  position: relative;
+  min-height: 450px;
+  height: 100%;
+}
+
+/* Project Number Styling - Matching original theme-markytech.css */
+.projectNumber {
+  position: absolute;
+  top: 0.5rem;
+  right: 3rem;
+  font-size: 6rem;
+  font-weight: 900;
+  color: rgba(var(--mui-palette-primary-mainChannel) / 0.1);
+  line-height: 1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.projectTitle {
+  color: var(--mui-palette-text-primary);
+  font-weight: 800;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+.projectDescription {
+  color: var(--mui-palette-text-secondary);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.projectTechStack {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.techIcon {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+/* Ensure consistent sizing for inline SVGs */
+.projectTechStack svg {
+  width: 52px;
+  height: 52px;
+}
+
+/* Dark theme - make tech icons white */
+.techIconDark svg,
+.techIconDark svg * {
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* Light theme - keep original colors (black/default) */
+.techIcon svg {
+  fill: currentColor;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projectShowcaseCard {
+    min-height: auto;
+  }
+
+  .projectRow {
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+  }
+
+  /* Override global negative margin for project images on mobile - MORE SPECIFIC */
+  .projectRow :global(.hero-animation-img) {
+    margin-block-end: 0 !important;
+    margin-bottom: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+    display: block !important;
+  }
+
+  /* Set fixed height for image container on mobile */
+  .projectRow :global(.hero-dashboard-img) {
+    min-height: 300px !important;
+    max-height: 400px !important;
+    height: 300px !important;
+    width: 100% !important;
+    position: relative !important;
+    inline-size: 100% !important; /* Override the global 80% */
+  }
+
+  .projectImageColumn,
+  .projectContentColumn {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1; /* Ensure content is above image */
+  }
+
+  .projectImageContainer {
+    height: 250px;
+    min-height: 250px;
+    width: 100%;
+  }
+
+  .projectContentContainer {
+    padding: 1.5rem 1rem;
+    min-height: auto;
+    height: auto;
+    justify-content: center;
+    position: relative;
+    z-index: 2; /* Ensure content is above image */
+  }
+
+  .projectNumber {
+    font-size: 4rem;
+    top: 0.5rem;
+    right: 1rem;
+  }
+
+  .projectTitle {
+    font-size: 1.75rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .projectDescription {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .projectTechStack {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    gap: 1rem;
+  }
+
+  .techIcon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Clients Section Styles */
+.fullWidthSection {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.swiperClientsLogosCarousel {
+  overflow: hidden;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.clientLogoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  height: 100%;
+}
+
+.clientLogoXl {
+  height: 80px;
+  width: 150px; /* Changed from fixed 150px to auto */
+  /* Added max-width matching original CSS */
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.8);
+  transition: all 0.3s ease;
+  margin: 0 15px;
+}
+
+.clientLogoXl:hover {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments for clients section */
+@media (max-width: 767.98px) {
+  .clientLogoXl {
+    height: 40px; /* Changed from 150px to 250px to match original */
+    width: 170px; /* Ensure auto width on mobile too */
+    margin: 0 10px;
+  }
+}
+
+/* Contact Section Styles */
+.contactImgBox {
+  position: relative;
+  border-radius: 0.75rem;
+  border-top-left-radius: 3.5rem;
+  overflow: visible; /* Changed from hidden to visible to allow border image to extend */
+}
+
+.contactBorderImg {
+  position: absolute;
+  top: -7%;
+  left: -7%;
+  max-width: 180px;
+  width: 180px;
+  height: auto;
+  z-index: 2;
+  display: none;
+  pointer-events: none;
+}
+
+@media (min-width: 992px) {
+  .contactBorderImg {
+    display: block;
+  }
+}
+
+.contactImg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  border-top-left-radius: 3.5rem; /* Match container border-radius on top-left */
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   CTA Section Styles (Get Started)
+   ============================================ */
+
+/* Section Container */
+.ctaSection {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Image */
+.ctaBgImage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Content Container */
+.ctaContainer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Grid Container - Base (Mobile) */
+.ctaGridContainer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Content Grid - Base (Mobile) */
+.ctaContentGrid {
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Title */
+.ctaTitle {
+  margin-bottom: 1rem;
+}
+
+/* Description */
+.ctaDescription {
+  margin-bottom: 1.5rem;
+}
+
+/* Button - Base (Mobile) */
+.ctaButton {
+  display: inline-flex;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 200px;
+}
+
+/* Visual Grid - Base (Mobile) */
+.ctaVisualGrid {
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
+}
+
+/* ============================================
+   Responsive Breakpoints
+   ============================================ */
+
+/* Tablet and up (640px+) */
+@media (min-width: 640px) {
+  .ctaContentGrid {
+    text-align: center;
+  }
+
+  .ctaButton {
+    min-width: 220px;
+  }
+}
+
+/* Desktop and up (992px+) */
+@media (min-width: 992px) {
+  .ctaGridContainer {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+
+  .ctaContentGrid {
+    text-align: start;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .ctaDescription {
+    margin-bottom: 2rem;
+  }
+
+  .ctaButton {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .ctaVisualGrid {
+    text-align: end;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0;
+  }
+}
+
+.ctaBgImageContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.ctaBgImage {
+  object-fit: cover;
+}
+
+.ctaTitle {
+  font-weight: 700;
+}
+
+.ctaVisualWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .ctaVisualWrapper {
+    justify-content: flex-end;
+  }
+}
+
+.ctaMetricsSvg {
+  width: 500px;
+  height: 400px;
+  max-width: 100%;
+}
+
+@media (max-width: 767.98px) {
+  .ctaMetricsSvg {
+    width: 500px;
+    height: 500px;
+  }
+}

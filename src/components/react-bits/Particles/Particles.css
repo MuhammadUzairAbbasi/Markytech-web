@@ -1,0 +1,5 @@
+.particles-container {
+  position: relative;
+  inline-size: 100%;
+  block-size: 100%;
+}

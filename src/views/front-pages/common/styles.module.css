@@ -1,0 +1,705 @@
+/* ============================================
+   Common Service Components Styles
+   ============================================ */
+
+/* Section Title Icon - Used in ServiceAboutSection */
+.sectionTitleImg {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  object-fit: contain;
+}
+
+/* ============================================
+   Service Hero Section Styles
+   ============================================ */
+
+.serviceHeroSection {
+  padding-top: 5.2rem;
+  padding-bottom: 4rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-end-start-radius: 3.5rem;
+  border-end-end-radius: 3.5rem;
+  margin-top: -5.2rem; /* Negative margin to pull it up to start from top */
+  position: relative;
+  background: linear-gradient(138.18deg, #ffffff 0%, #b6e3d4 98.44%);
+}
+
+.serviceHeroSectionDark {
+  background: #026875 !important;
+}
+
+@media (min-width: 900px) {
+  .serviceHeroSection {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .serviceHeroSection {
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: -8rem; /* Match the padding-top for mobile */
+  }
+}
+
+.serviceHeroContent {
+  padding: 0 1rem;
+}
+
+[data-bs-theme='dark'] .serviceHeroContent h1,
+[data-bs-theme='dark'] .serviceHeroTitle1 {
+  color: #ffffff !important;
+}
+
+.serviceHeroGraphic {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 576px) {
+  .serviceHeroGraphic {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceHeroContent {
+    text-align: center;
+  }
+  .serviceHeroContent h1,
+  .serviceHeroTitle1 {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .serviceHeroContent h2,
+  .serviceHeroTitle2 {
+    font-size: 2.8rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .serviceHeroContent p,
+  .serviceHeroDescription {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .serviceHeroContent .btn,
+  .serviceHeroButton {
+    font-size: 1rem !important;
+    padding: 0.75rem 2rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .serviceHeroContent h1,
+  .serviceHeroTitle1 {
+    font-size: 2.3rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .serviceHeroContent h2,
+  .serviceHeroTitle2 {
+    font-size: 2.2rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .serviceHeroContent p,
+  .serviceHeroDescription {
+    font-size: 1.2rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .serviceHeroContent .btn,
+  .serviceHeroButton {
+    font-size: 0.9rem !important;
+    padding: 0.6rem 1.5rem !important;
+  }
+
+  .serviceHeroContent {
+    padding: 0 1rem;
+  }
+}
+
+/* ============================================
+   Service CTA Section Styles
+   ============================================ */
+
+.serviceCTASection {
+  padding-top: 3rem;
+  padding-bottom: 2.5rem;
+  position: relative;
+  background-color: rgba(89, 185, 215, 0.1);
+}
+
+.serviceCTAContainer {
+  position: relative;
+  padding-left: 10rem;
+  /* padding-right: 10rem; */
+}
+
+.serviceCTAContent {
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.serviceCTATitle {
+  font-weight: 600;
+}
+
+.serviceCTADescription {
+  line-height: 1.6;
+}
+
+.serviceCTAButton {
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+}
+
+.serviceCTAGraphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+@media (min-width: 992px) {
+  .serviceCTASection {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+
+  .serviceCTAContent {
+    text-align: left;
+  }
+
+  .serviceCTAButton {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .serviceCTAContent {
+    text-align: center;
+  }
+  .serviceCTAContainer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .serviceCTAButton {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .serviceCTAGraphic {
+    margin-top: 2rem;
+  }
+}
+
+/* ============================================
+   Service Hero Graphics Animations
+   ============================================ */
+
+/* Web Development Animations */
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes floatParticle {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-5px) translateX(-5px);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(-15px) translateX(3px);
+    opacity: 0.9;
+  }
+}
+
+@keyframes rotateNodes {
+  from {
+    transform: rotate(0deg);
+    transform-origin: 200px 200px;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: 200px 200px;
+  }
+}
+
+@keyframes pulseNode {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes dataFlow {
+  0% {
+    stroke-dashoffset: 0;
+    opacity: 0.8;
+  }
+  100% {
+    stroke-dashoffset: -20;
+    opacity: 1;
+  }
+}
+
+/* Web Development SVG Animations */
+.serviceHeroGraphic :global(svg.web-dev-animation) {
+  animation: rotateGlow 30s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center center;
+}
+
+@keyframes rotateGlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.serviceHeroGraphic :global(svg.web-dev-animation circle[fill='url(#web-glow)']) {
+  animation: pulseGlow 3s ease-in-out infinite;
+  transform-origin: 200px 200px;
+}
+
+.serviceHeroGraphic :global(svg.web-dev-animation g[fill='rgba(255,255,255,0.9)']) {
+  animation: rotateNodes 20s linear infinite reverse;
+  transform-origin: 200px 200px;
+}
+
+.serviceHeroGraphic :global(svg.web-dev-animation g[fill='rgba(255,255,255,0.9)'] circle) {
+  animation: pulseNode 2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.serviceHeroGraphic :global(svg.web-dev-animation g[fill='rgba(82,188,205,0.8)'] circle) {
+  animation: floatParticle 4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.serviceHeroGraphic :global(svg.web-dev-animation g[stroke] line) {
+  stroke-dasharray: 5, 5;
+  animation: dataFlow 2s linear infinite;
+}
+
+/* Mobile App Animations */
+@keyframes appIconPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateApps {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes screenSlide {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-5px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes touchRipple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes appIconFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+@keyframes notificationPulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes floatMobile {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Mobile App SVG Animations */
+.serviceHeroGraphic :global(svg.mobile-dev-animation) {
+  animation: floatMobile 6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center center;
+}
+
+.serviceHeroGraphic :global(svg.mobile-dev-animation .mobile-device) {
+  animation: appIconFloat 6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.serviceHeroGraphic :global(svg.mobile-dev-animation .app-icon) {
+  animation: appIconPulse 2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.serviceHeroGraphic :global(svg.mobile-dev-animation .floating-icon) {
+  animation: appIconFloat 3s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.serviceHeroGraphic :global(svg.mobile-dev-animation .app-screen) {
+  animation: screenSlide 4s ease-in-out infinite;
+  transform-box: fill-box;
+}
+
+.serviceHeroGraphic :global(svg.mobile-dev-animation .notification) {
+  animation: notificationPulse 1.5s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.serviceHeroGraphic :global(svg.mobile-dev-animation circle[fill='url(#mobile-glow)']) {
+  animation: pulseGlow 4s ease-in-out infinite;
+  transform-origin: 200px 200px;
+}
+
+.serviceHeroGraphic :global(svg.mobile-dev-animation .rotating-apps) {
+  animation: rotateApps 20s linear infinite;
+  transform-box: fill-box;
+  transform-origin: 200px 200px;
+}
+
+/* UI/UX Design Animations */
+@keyframes rotateDesign {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scaleDesign {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+@keyframes brushStroke {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.8;
+  }
+}
+
+@keyframes colorWave {
+  0%,
+  100% {
+    transform: translateY(0px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+@keyframes designPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+/* UI/UX Design SVG Animations */
+.serviceHeroGraphic :global(svg.design-animation) {
+  animation: rotateDesign 40s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center center;
+}
+
+.serviceHeroGraphic :global(svg.design-animation circle[fill='url(#design-glow)']) {
+  animation: pulseGlow 4s ease-in-out infinite;
+  transform-origin: 200px 200px;
+}
+
+.serviceHeroGraphic :global(svg.design-animation g[fill='rgba(255,255,255,0.95)']) {
+  animation: rotateDesign 25s linear infinite reverse;
+  transform-origin: 200px 200px;
+}
+
+.serviceHeroGraphic :global(svg.design-animation g[fill='rgba(255,255,255,0.95)'] circle) {
+  animation: designPulse 2.5s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.serviceHeroGraphic :global(svg.design-animation g[fill='rgba(82,188,205,0.85)'] circle) {
+  animation: floatParticle 5s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.serviceHeroGraphic :global(svg.design-animation g[stroke] line) {
+  stroke-dasharray: 10, 5;
+  animation: brushStroke 3.5s ease-in-out infinite;
+}
+
+.serviceHeroGraphic :global(svg.design-animation g[stroke] path) {
+  stroke-dasharray: 15, 8;
+  animation: brushStroke 4s ease-in-out infinite;
+}
+
+/* Digital Marketing Animations */
+@keyframes socialIconFloat {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.9;
+  }
+  25% {
+    transform: translateY(-12px) translateX(5px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-8px) translateX(-5px);
+    opacity: 0.95;
+  }
+  75% {
+    transform: translateY(-15px) translateX(3px);
+    opacity: 1;
+  }
+}
+
+@keyframes socialIconPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes chartGrow {
+  0% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes engagementPulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes trendingUp {
+  0% {
+    transform: translateY(5px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+@keyframes shareExpand {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateSocial {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dataFlowMarketing {
+  0% {
+    stroke-dashoffset: 20;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Digital Marketing SVG Animations */
+.serviceHeroGraphic :global(svg.marketing-animation) {
+  animation: socialIconFloat 8s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center center;
+}
+
+.serviceHeroGraphic :global(svg.marketing-animation .social-icon) {
+  animation: socialIconPulse 2.5s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.serviceHeroGraphic :global(svg.marketing-animation .floating-social) {
+  animation: socialIconFloat 4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.serviceHeroGraphic :global(svg.marketing-animation .chart-bar) {
+  animation: chartGrow 2s ease-out forwards;
+  transform-box: fill-box;
+  transform-origin: bottom;
+}
+
+.serviceHeroGraphic :global(svg.marketing-animation .engagement-metric) {
+  animation: engagementPulse 2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.serviceHeroGraphic :global(svg.marketing-animation .trending-arrow) {
+  animation: trendingUp 1.5s ease-in-out infinite;
+  transform-box: fill-box;
+}
+
+.serviceHeroGraphic :global(svg.marketing-animation .share-ripple) {
+  animation: shareExpand 2s ease-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.serviceHeroGraphic :global(svg.marketing-animation .rotating-network) {
+  animation: rotateSocial 25s linear infinite;
+  transform-box: fill-box;
+  transform-origin: 200px 200px;
+}
+
+.serviceHeroGraphic :global(svg.marketing-animation .data-flow) {
+  stroke-dasharray: 10, 5;
+  animation: dataFlowMarketing 3s linear infinite;
+}
+
+.serviceHeroGraphic :global(svg.marketing-animation circle[fill='url(#marketing-glow)']) {
+  animation: pulseGlow 4s ease-in-out infinite;
+  transform-origin: 200px 200px;
+}
