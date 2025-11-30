@@ -62,7 +62,7 @@ const Footer = ({ mode }: { mode: Mode }) => {
                 <Typography component={Link} href='/#AboutUs' color='white' className='opacity-[0.78]'>
                   About Us
                 </Typography>
-                <Link href='/OurServices' className='flex items-center gap-[10px]'>
+                <Link href='/#OurServices' className='flex items-center gap-[10px]'>
                   <Typography color='white' className='opacity-[0.78]'>
                     Services
                   </Typography>

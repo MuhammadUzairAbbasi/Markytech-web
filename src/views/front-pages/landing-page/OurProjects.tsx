@@ -371,7 +371,7 @@ const OurProjects = () => {
           if (mouseOver) return
           timeout = setTimeout(() => {
             slider.next()
-          }, 1000000) // Matching 4500ms delay from portfolio-swiper.js
+          }, 4000) // Matching 4500ms delay from portfolio-swiper.js
         }
 
         slider.on('created', nextTimeout)
@@ -408,7 +408,6 @@ const OurProjects = () => {
       const handlePortfolioMouseMove = (e: Event) => {
         const mouseEvent = e as MouseEvent
 
-
         // Apply translateZ to overlay elements
         animationElements.forEach((layer, index) => {
           const zDepth = zDepths[index] || zDepths[zDepths.length - 1]
@@ -428,7 +427,6 @@ const OurProjects = () => {
 
       const handleNavMouseMove = (e: Event) => {
         const mouseEvent = e as MouseEvent
-
 
         // Different z-depth for navbar hover
         animationElements.forEach((layer, index) => {

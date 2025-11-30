@@ -195,7 +195,7 @@ const ServiceProjectsSection = ({
           if (mouseOver) return
           timeout = setTimeout(() => {
             slider.next()
-          }, 4500) // Matching 4500ms delay from portfolio-swiper.js
+          }, 4000) // Matching 4500ms delay from portfolio-swiper.js
         }
 
         slider.on('created', nextTimeout)
