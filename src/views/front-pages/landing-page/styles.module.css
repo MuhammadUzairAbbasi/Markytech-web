@@ -451,6 +451,11 @@
   z-index: 1;
   display: block;
 }
+@media (max-width: 768px) {
+  .projectRow .hero-animation-img {
+    top: 0rem;
+  }
+}
 
 .heroAnimationImg {
   width: 100%;

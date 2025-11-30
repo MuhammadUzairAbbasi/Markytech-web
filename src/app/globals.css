@@ -199,6 +199,20 @@ code {
     position: relative !important;
     display: block !important;
   }
+
+  /* Override for project images inside Portfolio section */
+  #Portfolio .hero-animation-img {
+    top: 0 !important; /* Override the top: 15rem above */
+  }
+
+  #web-projects .hero-animation-img,
+  #mobile-projects .hero-animation-img,
+  #ui-ux-projects .hero-animation-img,
+  #digital-marketing-projects .hero-animation-img,
+  #agentic-ai-projects .hero-animation-img {
+    top: 0 !important;
+  }
+
   #waveAnimation {
     inset-block-start: 5%;
   }
