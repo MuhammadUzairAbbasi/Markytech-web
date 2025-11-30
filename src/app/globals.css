@@ -148,3 +148,67 @@ code {
     margin-block-end: -10rem;
   }
 }
+
+/* Hero Dashboard Container - Laravel matching */
+.hero-dashboard-img {
+  z-index: 500;
+  inline-size: 80%;
+  margin-block: 0;
+  margin-inline: auto;
+  transform-style: preserve-3d;
+  transition: all 0.1s;
+  will-change: transform;
+  position: relative;
+  display: block;
+}
+
+.hero-dashboard-img img {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.hero-dashboard-img .hero-elements-img {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Wave Animation - Laravel matching */
+#waveAnimation {
+  position: absolute;
+  z-index: 2;
+  block-size: 100%;
+  inline-size: 100vw;
+  inset-block-start: 35%;
+  inset-inline-start: 0;
+  pointer-events: none;
+}
+
+/* Mobile overrides for hero animation images */
+@media (max-width: 768px) {
+  .hero-animation-img {
+    margin-block-end: 0 !important;
+    top: 15rem;
+    margin-bottom: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+    display: block !important;
+  }
+  #waveAnimation {
+    inset-block-start: 5%;
+  }
+
+  .hero-dashboard-img {
+    min-height: 300px !important;
+    max-height: 400px !important;
+    height: 300px !important;
+    width: 100% !important;
+    position: relative !important;
+    inline-size: 100% !important; /* Override the global 80% */
+  }
+}
